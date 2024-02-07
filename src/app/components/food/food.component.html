@@ -1,0 +1,33 @@
+<h1>Foods</h1>
+<h2>Please input food</h2>
+<input 
+  type="text" 
+  name="queryToSearch" 
+  [(ngModel)]="queryToSearch" 
+  (keydown.enter)="fetchFood()"
+  >
+<h2>Food to input is {{queryToSearch}}</h2>
+<div *ngFor="let food of currentFoodObject.foods; index as i;">
+  <div>
+    {{food.description}}
+    {{food.fdcId}}
+  </div>
+  
+    <app-nutrient *ngFor="let nutrient of food.foodNutrients" [nutrientData]="nutrient"></app-nutrient>
+     <!-- <div>
+      {{nutrient.nutrientName}}
+      {{nutrient.value + " : " + nutrient.unitName}}
+    </div>  -->
+  
+</div>
+<!--<h2>Actual Query: {{currentFoodObject.foodSearchCriteria.query}} </h2>
+<h2>General Search Input: {{currentFoodObject.foodSearchCriteria.generalSearchInput}} </h2>
+<h2>Number of Results per Page: {{currentFoodObject.foodSearchCriteria.numberOfResultsPerPage}} </h2>
+<h2>Page Number: {{currentFoodObject.foodSearchCriteria.pageNumber}} </h2>
+<h2>Page Size: {{currentFoodObject.foodSearchCriteria.pageSize}} </h2>
+<h2>Require All Words: {{currentFoodObject.foodSearchCriteria.requireAllWords}} </h2> -->
+
+<!-- <h3>Add food to daily</h3> -->
+<!-- <h3>{{currentFoodObject.foodSearchCriteria}}</h3> -->
+<!-- <h3>Delete food from daily</h3> -->
+<!-- <button (click)="fetchFood()">Fetch Me</button> -->
