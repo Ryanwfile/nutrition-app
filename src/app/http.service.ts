@@ -1,6 +1,7 @@
 import { HttpClient } from  '@angular/common/http';
 import { Injectable } from  '@angular/core';
 import {map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 // import { FoodData } from './food/food.component';
 import { Observable } from 'rxjs';
 @Injectable({
@@ -9,7 +10,8 @@ providedIn:  'root'
 
 export class HttpService {
   responseArray = [];
-  private url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=';
+  // private url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=';
+  private url = environment.apiUrl;
   // private url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=Cheddar%20Cheese';
    options = {
     headers: Headers,

@@ -42,7 +42,6 @@ export class FoodComponent {
         this.currentFoodObject.foodSearchCriteria = responseAsArray[4];
         this.currentFoodObject.foods = responseAsArray[5];
         this.currentFoodObject.aggregations = responseAsArray[6];
-        // console.log(this.currentFoodObject);
     }))
     .subscribe(data => {
       
