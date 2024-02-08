@@ -29,7 +29,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     const spanSelect = compiled.querySelector('span');
-    console.log(spanSelect?.textContent);
     expect(compiled.querySelector('span')?.textContent).toContain('nutrition-app');
   });
 });
