@@ -11,7 +11,6 @@ import { FoodData, Food } from '../../models';
 export class FoodComponent {
   name = '';
   queryToSearch = '';
-  // foodGroup: foodGroup = foodGroup.UNSELECTED;
   currentFoodObject: FoodData = {
     'aggregations': {},
     'currentPage': -1,
@@ -33,7 +32,7 @@ export class FoodComponent {
  
   fetchFood(){
     this.httpService.getFood(this.queryToSearch)
-    .pipe(
+    ?.pipe(
       map((responseData) => {
         const responseAsArray = Object.values(responseData);
         this.currentFoodObject.totalHits = responseAsArray[0];

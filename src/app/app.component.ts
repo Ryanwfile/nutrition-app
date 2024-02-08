@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   //strings need better validation
-  title = 'daily reminder';
+  title = 'nutrition-app';
   calorieAmount = 0;
   exerciseAmount = 0;
   gender = '';

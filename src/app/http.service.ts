@@ -18,7 +18,12 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getFood(queryString: string) {
-    return this.http.get(this.url + queryString);
+    if(queryString !== undefined && queryString !== '' && queryString !== null){
+      return this.http.get(this.url + queryString);
+    }
+    else {
+      return;
+    }
   }
 
   // testGet() {
