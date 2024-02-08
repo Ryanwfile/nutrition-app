@@ -18,26 +18,12 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getFood(queryString: string) {
-    return this.http.get(this.url + queryString);
+    if(queryString !== '' && queryString !== undefined && queryString !== null){
+      return this.http.get(this.url + queryString);
+    }
+    //need to capture error and put error message here
+    else return;    
   }
-
-  // testGet() {
-  //   // let responseArray = [];
-  //   // const returnObject = {} as FoodData;
-  //   this.http
-  //     .get(this.url)
-  //     .pipe(
-  //       map(responseData  => {
-         
-  //         for (const key in responseData) {
-  //           if(this.responseArray.length > 0 && responseData.hasOwnProperty(key)){
-  //             this.responseArray.push({responseData[key]});
-  //           }
-  //         }
-  //         // return responseArray;
-  //       })
-  //     )
-  // }
 }
 
   //https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=Cheddar%20Cheese

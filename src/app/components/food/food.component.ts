@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpService } from '../../http.service';
+import { HttpService } from 'src/app/services/http.service';
 import { map } from 'rxjs/operators';
-import { FoodData, Food } from '../../models';
+import { FoodData } from '../../models';
+
 
 @Component({
   selector: 'app-food',
@@ -33,31 +34,17 @@ export class FoodComponent {
  
   fetchFood(){
     this.httpService.getFood(this.queryToSearch)
-    .pipe(
+    ?.pipe(
       map((responseData) => {
-        const responseAsArray = Object.values(responseData);
-        this.currentFoodObject.totalHits = responseAsArray[0];
-        this.currentFoodObject.currentPage = responseAsArray[1];
-        this.currentFoodObject.totalPages = responseAsArray[2];
-        this.currentFoodObject.pageList = responseAsArray[3];
-        this.currentFoodObject.foodSearchCriteria = responseAsArray[4];
-        this.currentFoodObject.foods = responseAsArray[5];
-        this.currentFoodObject.aggregations = responseAsArray[6];
-        // console.log(this.currentFoodObject);
-    }))
-    .subscribe(data => {
-      
-    })    
+        const responseArray = Object.values(responseData);
+        this.currentFoodObject.totalHits = responseArray[0];
+        this.currentFoodObject.currentPage = responseArray[1];
+        this.currentFoodObject.totalPages = responseArray[2];
+        this.currentFoodObject.pageList = responseArray[3];
+        this.currentFoodObject.foodSearchCriteria = responseArray[4];
+        this.currentFoodObject.foods = responseArray[5];
+        this.currentFoodObject.aggregations = responseArray[6];
+      })
+    )
   }
-  // setQueryToSearch(query: string) {
-  //   this.queryToSearch = query;
-  //   // console.log("testing");
-  //   this.fetchFood();
-  //   // console.log(this.queryToSearch);
-  // }
-
-  // ngOnInit(){
-  //   this.fetchFood();
-  // }
-
 }
