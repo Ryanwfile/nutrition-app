@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## API usage
 
-This application uses [APIs from https://api.nal.usda.gov](https://api.nal.usda.gov)
+This application uses [APIs from Food Data Central, their docs](https://fdc.nal.usda.gov/api-guide.html#bkmk-6)
