@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FoodComponent } from './components/food/food.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { NutrientComponent } from './components/nutrient/nutrient.component';
+// import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { NutrientComponent } from './components/nutrient/nutrient.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

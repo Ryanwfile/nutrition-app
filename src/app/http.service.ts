@@ -9,10 +9,7 @@ providedIn:  'root'
 })
 
 export class HttpService {
-  responseArray = [];
-  // private url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=';
   private url = environment.apiUrl;
-  // private url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=DEMO_KEY&query=Cheddar%20Cheese';
    options = {
     headers: Headers,
 
